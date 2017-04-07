@@ -1,0 +1,36 @@
+.top{
+	background: #444444;
+	height: 50px;
+}
+
+#top_list{
+	list-style: none;
+	float: right;
+}
+#top_list li{
+	line-height: 40px;
+	display: inline;
+}
+
+#top_baidu{
+	height: 40px;
+	width: 100px;
+	display:block;
+	float:left;
+	margin-left: 5px;
+}
+
+#whole{
+	background: #F5F5F5;
+	width:1080px;
+	margin:0 auto;
+}
+
+#first{
+	background: white;
+	border:2px;
+}
+
+.a_img{
+	margin:5px 5px 5px 5px;
+}
