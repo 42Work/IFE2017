@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三栏式布局</title>
+	<meta charset="utf-8">
+	<style>
+		*{padding: 0px;margin:0px;}
+		img{
+			height: 80px;
+			width: 80px;
+		}
+		.host{
+			max-width: 1080px;
+			overflow: auto;
+			background: #eee;
+			border: solid 1px #999;
+			padding: 20px;
+			margin:0px auto;
+		}
+		.left{
+			width: 200px;
+			border: solid 1px #999;
+			padding:20px;
+			box-sizing: border-box;
+			background: white;
+			float: left;
+		}
+		.left span{
+			vertical-align: top;
+		}
+		.right{
+			width: 120px;
+			padding:10px 20px;
+			border: solid 1px #999;
+			background: white;
+			box-sizing: border-box;
+			float:right;
+		}
+		.right img{
+			margin:10px 0px;
+		}
+		.middle{
+			border:solid 1px #999;
+			background: white;
+			margin-left: 220px;
+			margin-right: 140px;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="host">
+	<div class="left">
+		<img src="./team.jpg">
+		<span>niannian</span>
+	</div>
+	<div class="right">
+		<img src="./person.jpg">
+		<img src="./person.jpg">
+		<img src="./person.jpg">
+		<img src="./person.jpg">
+	</div>
+	<div class="middle">
+		<p>
+扬州慢 </br>
+姜夔  </br>
+淮左名都，竹西佳处，解鞍少驻初程。 </br> 
+过春风十里，尽荠麦青青。  </br>
+自胡马窥江去后，废池乔木，犹厌言兵。  </br>
+渐黄昏、清角吹寒，都在空城。  </br> 
+杜郎俊赏，算而今重到须惊。  </br> 
+纵豆蔻词工，青楼梦好，难赋深情。  </br>
+二十四桥仍在，波心荡冷月无声。  </br>
+念桥边红药，年年知为谁生。 </br>
+		</p>
+	</div>
+	</div>
+</body>
+</html>
