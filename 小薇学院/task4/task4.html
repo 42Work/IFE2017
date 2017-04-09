@@ -11,18 +11,31 @@
 			background: #ccc;
   			margin: auto;  
   			position: absolute;  
-  			top: 0; left: 0; bottom: 0; right: 0;  
+  			top: 0; left: 0; bottom: 0; right: 0; 
+  			
 		}
-		.rig-bot{
+		.left{
+			width: 50px;
+			height: 50px;
+			background-color: #fc0;
+			/*border-radius: 50%;  圆*/
+			border-radius: 0px 0px 50px 0px;
+		}
+		.right{
+			width: 50px;
+			height: 50px;
+			background-color: #fc0;
 			position: absolute;
-			right: 0;bottom: 0;
+			bottom: 0px;
+			right: 0px;
+			border-radius: 50px 0px 0px 0px;
 		}
 	</style>
 </head>
 <body>
 	<div class="host">
-		<img src="./1.png">
-		<img src="./2.png" class="rig-bot">
+	<div class="left"></div>
+	<div class="right"></div>
 	</div>
 </body>
 </html>
