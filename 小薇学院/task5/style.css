@@ -1,0 +1,201 @@
+body {
+	padding: 0px;
+	margin:0px;
+	background-color: #DCDBDC;
+}
+
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{
+    margin:0; padding:0;
+}
+
+a{ 
+    text-decoration:none; 
+}
+
+.head{
+	height:50px;
+	background: #444444;
+}
+
+.head img{
+	margin-left: 30px;
+	height: 50px;
+	width: 130px;
+}
+
+.head nav{       /*nav的作用*/
+	float: right;
+	min-width: 400px;
+	/*此处不加margin自动垂直居中*/
+}
+
+.head ul li{
+	/*display: inline; 无圆点*/
+	float: left;
+	width: 25%;
+}
+
+.head ul a{
+	line-height: 50px;
+	text-decoration: none;
+	color: white;
+}
+
+.head ul a:hover{
+	color: #DDDDDD;
+}
+
+.head li:last-child a{
+    color: #999;
+}
+
+.right{
+	clear:both;
+	float:right;
+	width: 400px;
+	height: 600px;
+	background-color: white;
+	margin:20px 20px;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 3px #999;
+}
+
+.left{
+	padding: 2px;
+	margin: 19px 440px 0px 20px;
+	overflow: hidden;
+}
+
+.content{
+	background-color: white;
+	box-shadow: 1px 1px 3px #999;
+	margin:0px 0px 20px 0px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.content p{
+		text-indent: 2em;
+		font-family:"宋体";
+		font-size:1em;
+		line-height: 1.5;
+}
+
+.content ul{
+	list-style: none;
+}
+
+.pic{
+	width: 120px;
+	height: 120px;
+	border:1px solid #CCEEFF;
+	box-sizing: border-box;
+	text-align: center;
+	float:left;
+	margin:10px;
+}
+
+.pic p{
+	font-size: 5px;
+	line-height: 30px;
+}
+
+.pic img{
+	width: 100px;
+	height: 80px;
+	margin: 0px,auto;
+}
+
+.content table{
+	margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    border:1px solid darkgrey;
+}
+
+.content table a{
+	color:blue;
+	font-size:1em;
+	text-decoration:none;
+}
+
+.content table a:hover{
+	color:dodgerblue;
+}
+
+.content table tr th{
+    padding: 5px;
+    font-size: 0.7em;
+}
+
+.content table thead tr th{
+    background-color: rgb(51,51,51);
+    color: white;
+}
+
+.content table tfoot{
+    background-color: #AAAAAA;
+}
+
+
+.footer{
+	height: 80px;
+	width: 100%;
+	background-color: black;
+	text-align: center;
+}
+
+.footer span{
+	color: white;
+	font-weight: bold;
+	line-height: 80px;
+}
+
+.form h3{
+	border-left: 2px solid #aaaaaa;
+}
+
+.asideContent{
+	margin:10px 0;
+}
+
+.asideContent span{
+	width:35%;
+	text-align: right;
+	display: inline-block;
+	padding-right: 5px;
+}
+
+.asideContent input{
+	border-radius: 2px;
+	border:1px solid #aaaaaa;
+}
+
+.asideContent textarea{
+	vertical-align: top;
+	border-radius: 2px;
+	border:1px solid #aaaaaa;
+}
+
+.asideContent .requireInfo{
+	color: #aaaaaa;
+	font-size: 0.5em;
+	display: block;
+}
+
+.asideContent .contain{
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#submit{
+	width: 100%;
+	height: 30px;
+	border:none;
+	border-radius: 5px;
+	color: #ffffff;
+	background-color: #3355D0;
+}
