@@ -50,7 +50,7 @@ function getData() {
 		//data[i][0]=li_source[i].firstChild.nodeValue;
 		//data[i][1]=li_source[i].lastChild.innerHTML;
 		var city=li_source[i].firstChild.nodeValue;
-		var res=li_source[i].lastChild.innerHTML;
+		var res=li_source[i].childNodes[1].innerHTML;
 		data.push([city,res]);
 	}
 	return data;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task4</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span{
+			border:1px solid red;
+			margin:2px 2px;
+		}
+	</style>
+</head>
+<body>
+	<div class="data_input">
+		<input type="text" name="" class="inp" id="data_input" value="">
+		<button id="first" onclick="left_in()">左侧入</button>
+		<button id="second" onclick="right_in()">右侧入</button>
+		<button id="third" onclick="left_out()">左侧出</button>
+		<button id="fourth" onclick="right_out()">右侧出</button>
+	</div>
+	<div class="data_display" id="data_display"></div>
+</body>
+
+<script type="text/javascript">
+	var btn1=document.getElementById('first');
+	var btn2=document.getElementById('second');
+	var btn3=document.getElementById('third');
+	var btn4=document.getElementById('fourth');
+	var disp=document.getElementById('data_display');
+	var acor=disp.getElementsByTagName('span');
+
+	function left_in(){
+		var text=document.createElement('span');
+		var val=document.getElementById('data_input').value;
+    	text.innerHTML=val;
+    	disp.insertBefore(text,acor[0]);
+    	text.addEventListener('click',function(){
+    		disp.removeChild(this);
+    	});
+	}
+
+    function right_in(){
+    	var text=document.createElement('span');
+    	var val=document.getElementById('data_input').value;
+    	text.innerHTML=val;
+    	disp.appendChild(text);
+    	text.addEventListener('click',function(){
+    		disp.removeChild(this);
+    	});
+    }
+
+    function left_out(){
+    	alert(acor[0].innerHTML); //order;
+    	disp.removeChild(acor[0]);
+    }
+
+	function right_out(){	
+		alert(acor[acor.length-1].innerHTML);
+    	disp.removeChild(acor[acor.length-1]);
+    }
+
+</script>
+
+</html>
