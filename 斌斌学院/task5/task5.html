@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task5</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		span{
+			border:1px solid red;
+			margin:2px 2px;
+			display:inline-block;
+			background-color: red;
+			width: 20px;
+			overflow: hidden;
+			font-size:0.5em;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="data_input">
+		<input type="text" name="" class="inp" id="data_input" value="">
+		<button id="first" onclick="left_in()">左侧入</button>
+		<button id="second" onclick="right_in()">右侧入</button>
+		<button id="third" onclick="left_out()">左侧出</button>
+		<button id="fourth" onclick="right_out()">右侧出</button>
+		<button id="sort" onclick="sort()">排序</button>
+	</div>
+	<div class="data_display" id="data_display" style="overflow: hidden;"></div>
+	<div class="data_display" id="data_display2" style="overflow: hidden;"></div>
+</body>
+
+<script type="text/javascript">
+	var btn1=document.getElementById('first');
+	var btn2=document.getElementById('second');
+	var btn3=document.getElementById('third');
+	var btn4=document.getElementById('fourth');
+	var disp=document.getElementById('data_display');
+	var acor=disp.getElementsByTagName('span');
+
+	function set_text(){
+		var text=document.createElement('span');
+		var val=document.getElementById('data_input').value;
+		var num=document.getElementsByTagName('span').length;
+		if(val<10||val>100||num==60){
+			alert("输入范围错误！");
+			return null;
+		}else{
+			text.setAttribute('style','height:'+val+'px');
+	    	text.innerHTML=val;
+	    	text.addEventListener('click',function(){
+	    		disp.removeChild(this);
+	    	});
+	    }
+    	return text;
+	}
+
+	function left_in(){
+    	disp.insertBefore(set_text(),acor[0]);
+	}
+
+    function right_in(){
+    	disp.appendChild(set_text());
+    }
+
+    function left_out(){
+    	alert(acor[0].innerHTML); //order;
+    	disp.removeChild(acor[0]);
+    }
+
+	function right_out(){	
+		alert(acor[acor.length-1].innerHTML);
+    	disp.removeChild(acor[acor.length-1]);
+    }
+
+    function sort(){
+    	var temp=0;
+    	var vals=document.getElementById('data_display').getElementsByTagName('span');
+    	for(var i=0;i<vals.length;i++){
+    		for(var j=vals.length-1;j>i;j--){
+    			if(vals[j].innerHTML>vals[j-1].innerHTML){
+    				temp=vals[j].innerHTML;
+    				vals[j].innerHTML=vals[j-1].innerHTML;
+    				vals[j-1].innerHTML=temp;
+    			}
+    		}
+    		vals[i].setAttribute('style','height:'+vals[i].innerHTML+'px');
+    	}
+    }
+
+</script>
+
+</html>
