@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>task4</title>
-	<meta charset="utf-8">
+    <title>task4</title>
+    <meta charset="utf-8">
 
-	<style type="text/css">
-		span{
-			border:1px solid red;
-			margin:2px 2px;
-		}
-	</style>
+    <style type="text/css">
+        span{
+            border:1px solid red;
+            margin:2px 2px;
+        }
+    </style>
 </head>
 <body>
-	<div class="data_input">
-		<input type="text" name="" class="inp" id="data_input" value="">
-		<button id="first" onclick="left_in()">左侧入</button>
-		<button id="second" onclick="right_in()">右侧入</button>
-		<button id="third" onclick="left_out()">左侧出</button>
-		<button id="fourth" onclick="right_out()">右侧出</button>
-	</div>
-	<div class="data_display" id="data_display"></div>
+<div class="data_input">
+    <input type="text" name="" id="data-input" value="" placeholder="请填写数字">
+    
+    
+    <!--无意中看见您提交的作业，私心里想着代码还可以再优化下，
+        所以就想着试试pull request给您，如果有改的不好的地方还请见谅-->
+    
+    
+    
+    <button id="left-in">左侧入</button>                                    <!--语义化-->
+    <button id="right-in">右侧入</button>                                   <!--去除html中onclick事件属性，点击按钮发生的事件属性添加到js部分，方便修改，更易阅读-->
+    <button id="left-out">左侧出</button>
+    <button id="right-out">右侧出</button>
+</div>
+<div id="data_display"></div>                                               <!-- 类：data_display并未使用，故删除-->
 </body>
 
 <script type="text/javascript">
-	var btn1=document.getElementById('first');
-	var btn2=document.getElementById('second');
-	var btn3=document.getElementById('third');
-	var btn4=document.getElementById('fourth');
-	var disp=document.getElementById('data_display');
-	var acor=disp.getElementsByTagName('span');
+    var left_in=document.getElementById('left-in');                         //修改变量名为left_in等，语义化
+    var right_in=document.getElementById('right-in');
+    var left_out=document.getElementById('left-out');
+    var right_out=document.getElementById('right-out');
+    var disp=document.getElementById('data_display');
+    var acor=disp.getElementsByTagName('span');
+    var data_input=document.getElementById('data-input');
 
-	function left_in(){
-		var text=document.createElement('span');
-		var val=document.getElementById('data_input').value;
-    	text.innerHTML=val;
-    	disp.insertBefore(text,acor[0]);
-    	text.addEventListener('click',function(){
-    		disp.removeChild(this);
-    	});
-	}
-
-    function right_in(){
-    	var text=document.createElement('span');
-    	var val=document.getElementById('data_input').value;
-    	text.innerHTML=val;
-    	disp.appendChild(text);
-    	text.addEventListener('click',function(){
-    		disp.removeChild(this);
-    	});
+    function leftIn(){
+        if (data_input.value==""){                                          //如果输入内容为空则提示输入数字
+            alert("请输入数字!")
+        }else if
+        (!isNaN(data_input.value)){                                         //判断输入框内内容是否为数字
+            var text=document.createElement('span');
+            var val=document.getElementById('data-input').value;
+            text.innerHTML=val;
+            disp.insertBefore(text,acor[0]);
+            document.getElementById('data-input').value="";                 //重置输入框内内容为空
+        }
+        else {
+            alert("请输入数字!")                                            //若输入内容不为数字则弹出提示
+        }
     }
 
-    function left_out(){
-    	alert(acor[0].innerHTML); //order;
-    	disp.removeChild(acor[0]);
+    function rightIn(){
+        var text=document.createElement('span');
+        var val=document.getElementById('data-input').value;
+        text.innerHTML=val;
+        disp.appendChild(text);
     }
 
-	function right_out(){	
-		alert(acor[acor.length-1].innerHTML);
-    	disp.removeChild(acor[acor.length-1]);
+    function leftOut(){
+        alert(acor[0].innerHTML); //order;
+        disp.removeChild(acor[0]);
     }
+
+    function rightOut(){
+        alert(acor[acor.length-1].innerHTML);
+        disp.removeChild(acor[acor.length-1]);
+    }
+
+    function init() {                                                       //按键绑定
+        left_in.onclick=leftIn;
+        right_in.onclick=rightIn;
+        left_out.onclick=leftOut;
+        right_out.onclick=rightOut;
+
+
+    }
+
+    init();
+
+    disp.onclick=function (event) {
+        disp.removeChild(event.target);                     //利用target事件属性获取当前事件的目标节点
+    };
 
 </script>
 
